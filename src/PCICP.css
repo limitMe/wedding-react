@@ -1,3 +1,35 @@
 .PCICP {
   background-color: #282c34;
 }
+
+.photo-wrapper {
+  position: absolute;
+  z-index: 1;
+}
+
+.particles-wrapper {
+  position: absolute;
+  z-index: 2;
+}
+
+.text-wrapper {
+  position: absolute;
+  z-index: 3;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.main-text {
+  color: #fff;
+  font-weight: 600;
+  opacity: 1;
+  font-size: 28px;
+}
+
+.icp-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.6;
+}
