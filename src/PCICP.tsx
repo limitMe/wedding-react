@@ -79,7 +79,7 @@ const PCICP = () => {
         left: width/20 + 'px',
         top: '50px',
         width: width/2.5 + 'px',
-        height: (height - 2 * 50) + 'px'
+        height: (height - 3 * 50) + 'px'
       }}>
         <div className="main-text" style={{
             paddingTop: height/5 + 'px'
@@ -87,9 +87,9 @@ const PCICP = () => {
           <p>钟典和徐颖</p>
           <p>婚礼将于2021年9月21日举行</p>
         </div>
-        <div className="icp-text">
-          <p>ICP备</p>
-        </div>
+      </div>
+      <div className="icp-text">
+        <p>ICP备</p>
       </div>
     </div>
   );

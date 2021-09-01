@@ -29,7 +29,16 @@
 
 .icp-text {
   position: absolute;
+  text-align: center;
+  background-color: rgba(255,255,255,0.3);
+  z-index: 10;
   bottom: 0;
   width: 100%;
   opacity: 0.6;
+  height: 50px;
+}
+
+.icp-text > p {
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
