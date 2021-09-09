@@ -89,7 +89,7 @@ const PCICP = () => {
         </div>
       </div>
       <div className="icp-text">
-        <p>ICP备</p>
+        <p>京ICP备15030957号-2</p>
       </div>
     </div>
   );
