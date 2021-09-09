@@ -1,6 +1,6 @@
 import Particles from 'react-particles-js';
 import { useViewport } from './component/Page';
-import './PCICP.css';
+import './PCICP.scss';
 
 const PCICP = () => {
   const { width, height } = useViewport()
