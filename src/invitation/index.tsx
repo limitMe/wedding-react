@@ -26,7 +26,6 @@ const Invitation = () => {
   const [activeScreen, setActiveScreen] = useState(0)
   const afterLoad = (origin: any, destination: any, direction: any) => {
     setActiveScreen(destination.index)
-    console.log(origin.index, destination.index)
     if (origin.index === 0 && destination.index === 1) {
       playOceanSound()
     } else if (origin.index === 2 && destination.index === 3) {
