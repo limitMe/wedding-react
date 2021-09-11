@@ -2,9 +2,19 @@ import Page from '../component/Page'
 import { useViewport } from '../component/Viewport'
 import { Amap, Marker } from '@amap/amap-react'
 import './detail.scss'
+import { useSpring, animated } from '@react-spring/web'
 
 const Detail = (props: any) => {
   const { width, height } = useViewport()
+
+  const arrowAnimation = useSpring({
+    loop: true,
+    from: { y: -20, opacity: 0.5 },
+    to: { y: 0, opacity: 0.8 },
+    config: {
+      duration: 1200,
+    },
+  })
 
   return (
     <Page className="detail">
@@ -15,6 +25,19 @@ const Detail = (props: any) => {
             alt=''
             height={width/16*9 + 'px'}
             width='100%'
+          />
+          <animated.img
+            src='/images/hotel_arrow.png'
+            alt=''
+            height={width/16*9 + 'px'}
+            width='100%'
+            style={{
+              top: 0,
+              left: 0,
+              position: 'absolute',
+              zIndex: 3,
+              ...arrowAnimation
+            }}
           />
           <img
             src='/images/detail.png'
