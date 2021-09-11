@@ -1,5 +1,7 @@
 import { useIsMobile, useViewport } from '../component/Viewport';
 import PCPage from '../PC';
+import Title from './title'
+import Beginning from './beginning'
 
 const Invitation = () => {
   const isMobile = useIsMobile()
@@ -7,7 +9,10 @@ const Invitation = () => {
     <>
       {
         isMobile ?
-        <div /> :
+        <>
+          <Title />
+          <Beginning />
+        </> :
         <PCPage></PCPage>
       }
     </>
