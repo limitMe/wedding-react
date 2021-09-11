@@ -1,6 +1,7 @@
 import Page from '../component/Page'
 import { useViewport } from '../component/Viewport';
 import { useSpring, animated } from '@react-spring/web'
+import DownArrow from '../component/DownArrow'
 
 const Title = () => {
   const { width, height } = useViewport()
@@ -28,15 +29,6 @@ const Title = () => {
     delay: 2400,
     config: {
       duration: 1000,
-    }
-  })
-
-  const arrowAnimation = useSpring({
-    loop: true,
-    from: { y: 0, opacity: 0.3 },
-    to: { y: 12, opacity: 0.7 },
-    config: {
-      duration: 1200,
     }
   })
 
@@ -80,23 +72,7 @@ const Title = () => {
           诚邀共见
         </p>
       </animated.div>
-      <animated.div style={{
-        position: 'absolute',
-        width: width + 'px',
-        textAlign: 'center',
-        fontSize: '20px',
-        color: '#fff',
-        zIndex: 3,
-        bottom: '30px',
-        ...arrowAnimation
-      }}>
-        <img src='/images/icons/scroll_down_white.png' style={{
-            height: '20px',
-            width: '20px',
-          }}>
-        </img>
-      </animated.div>
-      
+      <DownArrow />
     </Page>
   )
 }
