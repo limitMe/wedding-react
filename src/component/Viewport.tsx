@@ -27,9 +27,12 @@ const useViewport = () => {
   return { width, height };
 };
 
-// You can add break point to layout mobile and pc differently
+const useIsMobile = () => {
+  const { width, height } = React.useContext(viewportContext);
+  return height / width > 1.3 ? true : false;
+};
 
-const Page = (props: any) => {
+const Viewport = (props: any) => {
   const { width, height } = React.useContext(viewportContext);
   return (
     <ViewportProvider>
@@ -43,5 +46,5 @@ const Page = (props: any) => {
   );
 }
 
-export  { useViewport };
-export default Page;
+export  { useViewport, useIsMobile };
+export default Viewport;

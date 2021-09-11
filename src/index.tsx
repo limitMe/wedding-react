@@ -6,17 +6,17 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import Page from './component/Page'
-import PCPage from './PC';
+import Viewport from './component/Viewport'
+import Invitation from './invitation'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
         <Route path="/">
-          <Page>
-            <PCPage />
-          </Page>
+          <Viewport>
+            <Invitation />
+          </Viewport>
         </Route>
       </Switch>
     </Router>

@@ -1,5 +1,5 @@
 import Particles from 'react-particles-js';
-import { useViewport } from './component/Page';
+import { useIsMobile, useViewport } from './component/Viewport';
 import './PC.scss';
 
 const PCPage = () => {
