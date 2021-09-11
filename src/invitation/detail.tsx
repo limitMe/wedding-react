@@ -9,7 +9,6 @@ const Detail = (props: any) => {
   return (
     <Page className="detail">
       {
-        props.active ?
         <>
           <img
             src='/images/hotel.jpg'
@@ -41,7 +40,7 @@ const Detail = (props: any) => {
               />
             </Amap>
           </div>
-        </> : null
+        </>
       }
     </Page>
   )
