@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useIsMobile } from '../component/Viewport';
 import ReactFullpage from '@fullpage/react-fullpage';
 import PCPage from '../PC';
@@ -6,6 +7,12 @@ import Beginning from './beginning'
 
 const Invitation = () => {
   const isMobile = useIsMobile()
+
+  const [activeScreen, setActiveScreen] = useState(0)
+  const afterLoad = (origin: any, destination: any, direction: any) => {
+    setActiveScreen(destination.index);
+  }
+
   return (
     <>
       {
@@ -13,6 +20,7 @@ const Invitation = () => {
         <ReactFullpage
           licenseKey = {'YOUR_KEY_HERE'}
           scrollingSpeed = {1000}
+          afterLoad = {afterLoad}
           // @ts-ignore
           render={({ state, fullpageApi }) => {
             return (
@@ -21,7 +29,7 @@ const Invitation = () => {
                   <Title />
                 </div>
                 <div className="section">
-                <Beginning />
+                <Beginning active={activeScreen === 1} />
                 </div>
               </ReactFullpage.Wrapper>
             );

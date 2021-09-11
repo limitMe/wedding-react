@@ -1,9 +1,11 @@
 import Page from '../component/Page'
 
-const Beginning = () => {
+const Beginning = (props: any) => {
   return (
     <Page style={{
-      backgroundColor: '#0f0'
+      backgroundImage: 'url("/images/beginning.jpg")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
     }}>
 
     </Page>
