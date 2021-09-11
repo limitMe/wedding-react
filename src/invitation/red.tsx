@@ -16,7 +16,12 @@ const Red = (props: any) => {
         <>
           <div className="text">
             <Typist>
-              一场青春的盛筵
+              十一年的刻骨经历
+              <br />
+              浓缩在这一场
+              <br />
+              青春的盛筵
+              <br />
               <br />
               等你来
             </Typist>

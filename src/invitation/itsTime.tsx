@@ -76,6 +76,9 @@ const ItsTime = (props: any) => {
               恰今朝
               <br />
               三星在天时
+              <br />
+              <br />
+              是时候了...
             </Typist>
           </div>
           <DownArrow delay={5000} />

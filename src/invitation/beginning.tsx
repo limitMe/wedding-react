@@ -29,6 +29,20 @@ const Beginning = (props: any) => {
               坐在靠窗第三排的男主
               <br />
               看见了人群中最亮眼的女主
+              <br />
+              <br />
+              Our story begins
+              <br />
+              故事开始了
+              <br />
+              但又没完全开始
+              <br />
+              <br />
+              时间像一条大河
+              <br />
+              起起伏伏
+              <br />
+              把他们推向分开又重逢的旅途
             </Typist>
           </div>
           <DownArrow delay={5000}/>
