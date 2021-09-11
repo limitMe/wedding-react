@@ -11,9 +11,10 @@ import Title from './title'
 import Beginning from './beginning'
 import ItsTime from './itsTime'
 import Fireworks from './fireworks'
-import Forest from './forest';
-import Names from './names';
-import Red from './red';
+import Forest from './forest'
+import Names from './names'
+import Red from './red'
+import Detail from './detail'
 
 const Invitation = () => {
   const isMobile = useIsMobile()
@@ -82,6 +83,9 @@ const Invitation = () => {
                   </div>
                   <div className="section">
                     <Red active={activeScreen === 6} />
+                  </div>
+                  <div className="section">
+                    <Detail active={activeScreen === 7} />
                   </div>
                 </ReactFullpage.Wrapper>
               </Suspense>

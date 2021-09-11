@@ -8,6 +8,10 @@ import {
 } from 'react-router-dom'
 import Viewport from './component/Viewport'
 import Invitation from './invitation'
+import { config as AmapReactConfig } from '@amap/amap-react';
+
+AmapReactConfig.version = '2.0';
+AmapReactConfig.key = '43a2121347837e45a286fffd6a2fd0f9';
 
 ReactDOM.render(
   <React.StrictMode>
