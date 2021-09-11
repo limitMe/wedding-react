@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useIsMobile } from '../component/Viewport'
 import ReactFullpage from '@fullpage/react-fullpage'
 import useSound from 'use-sound'
@@ -6,6 +6,7 @@ import ForestSound from '../sound/forest.mp3'
 import OceanSound from '../sound/ocean.mp3'
 import CampfireSound from '../sound/campfire.mp3'
 import PCPage from '../PC';
+import Loading from '../component/Loading'
 import Title from './title'
 import Beginning from './beginning'
 import ItsTime from './itsTime'
@@ -59,29 +60,31 @@ const Invitation = () => {
           // @ts-ignore
           render={({ state, fullpageApi }) => {
             return (
-              <ReactFullpage.Wrapper>
-                <div className="section">
-                  <Title />
-                </div>
-                <div className="section">
-                  <Beginning active={activeScreen === 1} />
-                </div>
-                <div className="section">
-                  <ItsTime active={activeScreen === 2} />
-                </div>
-                <div className="section">
-                  <Fireworks active={activeScreen === 3} />
-                </div>
-                <div className="section">
-                  <Forest active={activeScreen === 4} />
-                </div>
-                <div className="section">
-                  <Names active={activeScreen === 5} />
-                </div>
-                <div className="section">
-                  <Red active={activeScreen === 6} />
-                </div>
-              </ReactFullpage.Wrapper>
+              <Suspense fallback={<Loading />}>
+                <ReactFullpage.Wrapper>
+                  <div className="section">
+                    <Title />
+                  </div>
+                  <div className="section">
+                    <Beginning active={activeScreen === 1} />
+                  </div>
+                  <div className="section">
+                    <ItsTime active={activeScreen === 2} />
+                  </div>
+                  <div className="section">
+                    <Fireworks active={activeScreen === 3} />
+                  </div>
+                  <div className="section">
+                    <Forest active={activeScreen === 4} />
+                  </div>
+                  <div className="section">
+                    <Names active={activeScreen === 5} />
+                  </div>
+                  <div className="section">
+                    <Red active={activeScreen === 6} />
+                  </div>
+                </ReactFullpage.Wrapper>
+              </Suspense>
             );
           }}
         /> :

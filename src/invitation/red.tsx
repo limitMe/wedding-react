@@ -1,5 +1,8 @@
 import Page from '../component/Page'
 import DownArrow from '../component/DownArrow'
+import Typist from 'react-typist'
+import { useViewport } from '../component/Viewport'
+import './red.scss'
 
 const Red = (props: any) => {
   return (
@@ -11,6 +14,13 @@ const Red = (props: any) => {
       {
         props.active ?
         <>
+          <div className="text">
+            <Typist>
+              一场青春的盛筵
+              <br />
+              等你来
+            </Typist>
+          </div>
           <DownArrow delay={5000} />
         </> : null
       }
