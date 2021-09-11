@@ -16,14 +16,12 @@ const Red = (props: any) => {
         <>
           <div className="text">
             <Typist>
-              十一年的刻骨经历
-              <br />
-              浓缩在这一场
-              <br />
-              青春的盛筵
-              <br />
-              <br />
-              等你来
+            爱情旅途要启航了
+            <br />
+            这个闪光的日子
+            <br />
+            <br />
+            期待有你
             </Typist>
           </div>
           <DownArrow delay={5000} />
