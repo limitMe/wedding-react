@@ -7,7 +7,7 @@ import {
   Route
 } from 'react-router-dom'
 import Page from './component/Page'
-import PCICP from './PCICP';
+import PCPage from './PC';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +15,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/">
           <Page>
-            <PCICP />
+            <PCPage />
           </Page>
         </Route>
       </Switch>

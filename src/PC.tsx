@@ -1,8 +1,8 @@
 import Particles from 'react-particles-js';
 import { useViewport } from './component/Page';
-import './PCICP.scss';
+import './PC.scss';
 
-const PCICP = () => {
+const PCPage = () => {
   const { width, height } = useViewport()
   return (
     <div className="PCICP">
@@ -86,6 +86,8 @@ const PCICP = () => {
         }}>
           <p>钟典和徐颖</p>
           <p>婚礼将于2021年9月21日举行</p>
+          <br />
+          <p>使用手机访问获得最佳效果</p>
         </div>
       </div>
       <div className="icp-text">
@@ -95,4 +97,4 @@ const PCICP = () => {
   );
 }
 
-export default PCICP;
+export default PCPage;
