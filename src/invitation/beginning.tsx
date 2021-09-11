@@ -6,7 +6,9 @@ import shipHorn from '../sound/ship_horn.mp3'
 import DownArrow from '../component/DownArrow'
 
 const Beginning = (props: any) => {
-  const [play] = useSound(shipHorn);
+  const [play] = useSound(shipHorn, {
+    volume: 0.2
+  });
   if (props.active) {
     play()
   }

@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { useIsMobile } from '../component/Viewport'
 import ReactFullpage from '@fullpage/react-fullpage'
+import useSound from 'use-sound'
+import ForestSound from '../sound/forest.mp3'
+import OceanSound from '../sound/ocean.mp3'
+import CampfireSound from '../sound/campfire.mp3'
 import PCPage from '../PC';
 import Title from './title'
 import Beginning from './beginning'
@@ -13,9 +17,35 @@ import Red from './red';
 const Invitation = () => {
   const isMobile = useIsMobile()
 
+  const [playForestSound, forestSoundHelper] = useSound(ForestSound)
+  const [playOceanSound, oceanSoundHelper ] = useSound(OceanSound)
+  const [playCampfireSound, campfireSoundHelper] = useSound(CampfireSound)
+
   const [activeScreen, setActiveScreen] = useState(0)
   const afterLoad = (origin: any, destination: any, direction: any) => {
-    setActiveScreen(destination.index);
+    setActiveScreen(destination.index)
+    if (origin.index === 0 && destination.index === 1) {
+      playOceanSound()
+    } else if (origin.index === 2 && destination.index === 3) {
+      oceanSoundHelper.stop()
+      playCampfireSound()
+    } else if (origin.index === 3 && destination.index === 4) {
+      campfireSoundHelper.stop()
+      playForestSound()
+    } else if (origin.index === 5 && destination.index === 6) {
+      forestSoundHelper.stop()
+    // reverse
+    } else if (origin.index === 6 && destination.index === 5) {
+      playForestSound()
+    } else if (origin.index === 4 && destination.index === 3) {
+      forestSoundHelper.stop()
+      playCampfireSound()
+    } else if (origin.index === 2 && destination.index === 3) {
+      campfireSoundHelper.stop()
+      playOceanSound()
+    } else if (origin.index === 1 && destination.index === 0) {
+      oceanSoundHelper.stop()
+    }
   }
 
   return (
