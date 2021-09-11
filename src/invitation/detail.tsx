@@ -18,14 +18,15 @@ const Detail = (props: any) => {
           />
           <img
             src='/images/detail.png'
-            height={width/2.76 + 'px'}
+            height={width/2.76 + 8 + 'px'}
             alt=''
             width='100%'
             style={{
-              marginTop: '-4px'
+              objectFit: 'cover',
+              marginTop: '-6px',
             }}
           />
-          <div style={{ width: '100%', height: height - width/16*9 - width/2.76 + 'px'}}>
+          <div style={{ width: '100%', height: height - width/16*9 - width/2.76 - 2 + 'px', marginTop: '-6px'}}>
             <Amap
               mapStyle="amap://styles/whitesmoke"
               zoom={14}
