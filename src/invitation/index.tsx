@@ -26,6 +26,7 @@ const Invitation = () => {
   const [activeScreen, setActiveScreen] = useState(0)
   const afterLoad = (origin: any, destination: any, direction: any) => {
     setActiveScreen(destination.index)
+    console.log(origin.index, destination.index)
     if (origin.index === 0 && destination.index === 1) {
       playOceanSound()
     } else if (origin.index === 2 && destination.index === 3) {
@@ -42,7 +43,7 @@ const Invitation = () => {
     } else if (origin.index === 4 && destination.index === 3) {
       forestSoundHelper.stop()
       playCampfireSound()
-    } else if (origin.index === 2 && destination.index === 3) {
+    } else if (origin.index === 3 && destination.index === 2) {
       campfireSoundHelper.stop()
       playOceanSound()
     } else if (origin.index === 1 && destination.index === 0) {
