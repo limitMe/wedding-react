@@ -40,8 +40,11 @@ const Admin = () => {
 
   const search = useLocation().search;
   const passcode=new URLSearchParams(search).get("passcode");
+  if (passcode !== 'zddsg') {
+    return <h1>权限校验失败</h1>
+  }
   return(
-    data && data.success && passcode === 'zddsg' ?
+    data && data.success ?
     <div>
       <Carousel
         autoplay={true}
@@ -101,7 +104,7 @@ const Admin = () => {
           }) : null
         }
       </List>
-    </div> : <h1>数据加载失败</h1>
+    </div> : null
   )
 }
 

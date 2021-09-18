@@ -35,7 +35,8 @@ export const post = async (url: string, body: object, auth?: string) => {
 }
 
 const defaultAuth = () => {
-  localStorage.getItem(AUTH_KEY)
+  const key = localStorage.getItem(AUTH_KEY);
+  return key;
 }
 
 const errorHandler = (error: any) => {
@@ -50,7 +51,8 @@ const generalResponseCheck = (response: any) => {
   data = response.data;
   if (data === undefined || data.success === false) {
     if (data.code === 402) {
-
+      localStorage.setItem(AUTH_KEY, '');
+      window.location.href = '/game/login';
     }
     return false;
   }
