@@ -3,6 +3,7 @@ import config from '../config.json';
 
 
 const AUTH_KEY = 'auth_key';
+const LOGIN_FAILED_TIMES = 'login_failed_times';
 
 export const get = async (url: string, auth?: string) => {
   const newAuth = auth ?? defaultAuth();
@@ -52,6 +53,8 @@ const generalResponseCheck = (response: any) => {
   if (data === undefined || data.success === false) {
     if (data.code === 402) {
       localStorage.setItem(AUTH_KEY, '');
+      const times = localStorage.getItem(LOGIN_FAILED_TIMES) ? Number(localStorage.getItem(LOGIN_FAILED_TIMES)): 0;
+      localStorage.setItem(LOGIN_FAILED_TIMES, String(times + 1));
       window.location.href = '/game/login';
     }
     return false;

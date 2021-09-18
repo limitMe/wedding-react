@@ -5,6 +5,7 @@ import Page from '../component/Page';
 import './login.scss';
 
 const AUTH_KEY = 'auth_key';
+const LOGIN_FAILED_TIMES = 'login_failed_times';
 
 const Constellation = (props: {
   imageName: string,
@@ -37,6 +38,8 @@ const Login = () => {
     }
   }, [])
 
+  const failedTimes = localStorage.getItem(LOGIN_FAILED_TIMES) ? Number(localStorage.getItem(LOGIN_FAILED_TIMES)): 0;
+
   return (
     <Page className="login" style={{
       backgroundImage: 'url("/images/game_login.jpg")',
@@ -45,7 +48,22 @@ const Login = () => {
     }}>
       <div style={{ maxHeight: '100%', overflow: 'scroll' }}>
         <p className="hint">
-          使用您自己的姓名作为凭证进入游戏<br />选择您的星座来验证身份 <br /> 滑到最底部登录
+          {
+            failedTimes > 2 ? 
+            <>
+              如果持续登录失败，有可能是：
+              <ul style={{
+                textAlign: 'left'
+              }}>
+              <li>姓名没有输入正确，对于生僻字可能要省略，或者尝试您的曾用名</li>
+              <li>新人为您设置的星座有误，或者第一次登录时选择了错误的星座。不过你可以持续登录12次试验出来</li>
+              <li>作为新人朋友的家属前来，我们可能不知道您的相关信息，无法将您加入游戏，请见谅</li>
+              </ul>
+            </> :
+            <>
+              使用您自己的姓名作为凭证进入游戏<br />选择您的星座来验证身份 <br /> 滑到最底部登录
+            </>
+          }
         </p>
         <div className="nameInput">
           <input placeholder="输入您的姓名" onChange={(e) => setName(e.target.value)}/>
