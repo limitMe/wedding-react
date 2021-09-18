@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Flex } from 'antd-mobile';
 import 'antd-mobile/lib/flex/style/css';
 import Page from '../component/Page';
@@ -29,6 +29,13 @@ const Constellation = (props: {
 const Login = () => {
   const [name, setName] = useState('');
   const [zodiac, setZodiac] = useState('');
+
+  useEffect(() => {
+    const key = localStorage.getItem(AUTH_KEY);
+    if (key !== undefined && key !== '') {
+      window.location.href = '/game';
+    }
+  }, [])
 
   return (
     <Page className="login" style={{
