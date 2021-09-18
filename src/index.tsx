@@ -8,6 +8,8 @@ import {
 } from 'react-router-dom'
 import Viewport from './component/Viewport'
 import Invitation from './invitation'
+import Game from './game'
+import Admin from './game/admin'
 import { config as AmapReactConfig } from '@amap/amap-react';
 
 AmapReactConfig.version = '2.0';
@@ -17,6 +19,16 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
+        <Route path="/game/admin">
+          <Viewport>
+            <Admin />
+          </Viewport>
+        </Route>
+        <Route path="/game">
+          <Viewport>
+            <Game />
+          </Viewport>
+        </Route>
         <Route path="/">
           <Viewport>
             <Invitation />
