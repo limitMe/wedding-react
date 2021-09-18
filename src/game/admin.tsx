@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 import { List, Carousel } from 'antd-mobile';
 import 'antd-mobile/lib/list/style/css';
 import 'antd-mobile/lib/carousel/style/css';
@@ -37,9 +38,10 @@ const Admin = () => {
     fetchAdminData();
   }, []);
 
-  console.log(data)
+  const search = useLocation().search;
+  const passcode=new URLSearchParams(search).get("passcode");
   return(
-    data && data.success ?
+    data && data.success && passcode === 'zddsg' ?
     <div>
       <Carousel
         autoplay={true}
@@ -99,7 +101,7 @@ const Admin = () => {
           }) : null
         }
       </List>
-    </div> : null
+    </div> : <h1>数据加载失败</h1>
   )
 }
 
