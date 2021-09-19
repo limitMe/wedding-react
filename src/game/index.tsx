@@ -181,6 +181,7 @@ const Game = () => {
                         <li>一旦用掉所有答题机会，您也不能再额外获得新的线索了</li>
                         <li>使用对方的全名，如有可能询问对方进入游戏时所输入的名字</li>
                         <li>回答正确后，您会被分配一个金奖编号，用于抽奖</li>
+                        <li><a href="/game/names">查看全体来宾姓名</a></li>
                       </ul>
                     </div>
                   )
@@ -252,7 +253,6 @@ const Game = () => {
         </div>: null
       }
     </Page> : null
- 
 }
 
 export default Game;
