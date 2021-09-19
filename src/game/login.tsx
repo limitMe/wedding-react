@@ -53,7 +53,8 @@ const Login = () => {
             <>
               如果持续登录失败，有可能是：
               <ul style={{
-                textAlign: 'left'
+                textAlign: 'left',
+                paddingRight: '48px'
               }}>
               <li>姓名没有输入正确，对于生僻字可能要省略，或者尝试您的曾用名</li>
               <li>新人为您设置的星座有误，或者第一次登录时选择了错误的星座。不过你可以持续登录12次试验出来</li>

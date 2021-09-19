@@ -13,8 +13,8 @@ export const get = async (url: string, auth?: string) => {
         'authorization': newAuth
       }
     });
-    const success = generalResponseCheck(response);
-    return success ? response.data: {};
+    generalResponseCheck(response);
+    return response.data ?? {};
   } catch (error) {
     errorHandler(error);
   }
@@ -28,8 +28,8 @@ export const post = async (url: string, body: object, auth?: string) => {
         'authorization': newAuth
       }
     });
-    const success = generalResponseCheck(response);
-    return success ? response.data: {};
+    generalResponseCheck(response);
+    return response.data ?? {};
   } catch (error) {
     errorHandler(error);
   }
