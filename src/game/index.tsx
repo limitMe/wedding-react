@@ -107,7 +107,7 @@ const Game = () => {
     cards.push({
       imageName: 'silver',
       title: '银奖编号',
-      info: String(data.silver)
+      info: String(data.silverNum)
     })
   }
   if (data.goldenNum && data.goldenNum !== 0) {
