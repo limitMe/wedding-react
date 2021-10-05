@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { get, post } from './Fetch';
+import { get } from './Fetch';
 
 const Game = () => {
   const fetchMainData = async () => {
