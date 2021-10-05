@@ -12,6 +12,7 @@ import Game from './game'
 import Admin from './game/admin'
 import Login from './game/login'
 import ResetCookie from './game/resetCookie';
+import GuestNames from './game/guestnames';
 import { config as AmapReactConfig } from '@amap/amap-react';
 
 AmapReactConfig.version = '2.0';
@@ -34,6 +35,11 @@ ReactDOM.render(
         <Route path="/game/reset">
           <Viewport>
             <ResetCookie />
+          </Viewport>
+        </Route>
+        <Route path="/game/names">
+          <Viewport>
+            <GuestNames />
           </Viewport>
         </Route>
         <Route path="/game">
